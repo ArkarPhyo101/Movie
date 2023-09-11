@@ -12,31 +12,49 @@ class Api {
       'https://api.themoviedb.org/3/movie/upcoming?api_key=${Constants.apiKey}';
 
   Future<List<Movie>> getTrendingMovies() async {
+
     final response = await http.get(Uri.parse(_trendingUrl));
-    if (response.statusCode == 200) {
+
+    if (response.statusCode == 200) 
+    {
       final decodedData = json.decode(response.body)['results'] as List;
+        
       return decodedData.map((movie) => Movie.fromJson(movie)).toList();
-    } else {
+    } 
+    else 
+    {
       throw Exception('Something happened');
     }
   }
 
   Future<List<Movie>> getTopRatedMovies() async {
+
     final responce = await http.get(Uri.parse(_topRatedUrl));
-    if (responce.statusCode == 200) {
-      final decodeData = json.decode(responce.body)['results'] as List;
-      return decodeData.map((e) => Movie.fromJson(e)).toList();
-    } else {
+    if (responce.statusCode == 200) 
+    {
+      final decodeData = json.decode(
+        responce.body)['results'] as List;
+
+      return decodeData.map((movie) => Movie.fromJson(movie)).toList();
+    } 
+    else 
+    {
       throw Exception('Something happened');
     }
   }
 
   Future<List<Movie>> getUpcomeMovies() async {
+    
     final responce = await http.get(Uri.parse(_upcomeUrl));
-    if (responce.statusCode == 200) {
+
+    if (responce.statusCode == 200) 
+    {
       final decodeData = json.decode(responce.body)['results'] as List;
-      return decodeData.map((e) => Movie.fromJson(e)).toList();
-    } else {
+
+      return decodeData.map((movie) => Movie.fromJson(movie)).toList();
+    }
+     else 
+     {
       throw Exception('Somethig happened');
     }
   }
