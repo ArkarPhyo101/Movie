@@ -1,4 +1,4 @@
-import 'package:api_call_app/view/home_screen.dart';
+import 'package:api_call_app/View/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 void main(){

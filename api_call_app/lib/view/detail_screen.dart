@@ -1,8 +1,9 @@
-import 'package:api_call_app/models/movie.dart';
-import 'package:api_call_app/widgets/constants.dart';
+import 'package:api_call_app/Model/movie.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/backbutton.dart';
+import '../Controller/backbutton.dart';
+import '../Controller/constants.dart';
+
 
 class DetailScreen extends StatelessWidget {
   const DetailScreen({super.key, required this.movie});
